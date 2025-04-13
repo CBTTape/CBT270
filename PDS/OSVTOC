@@ -1,0 +1,16 @@
+//SBGOLOBO JOB (A006,SYTM,99,99),S-GOLOB,
+//        CLASS=B,MSGCLASS=X,NOTIFY=&SYSUID
+//*******************************************************************//
+//*  NOTE!!!!! THIS WILL ASK OPERS FOR A REPLY - YOU NEED A "U" IF OK.
+//*******************************************************************//
+//* ------------------------------------------- *//
+//* INVOKE THE DEVICE SUPPORT FACILITY PROGRAM
+//* ------------------------------------------- *//
+//****************************************//
+//*      CONVERT IXVTOC TO OSVTOC:
+//****************************************//
+//S1    EXEC PGM=ICKDSF,TIME=1439,REGION=0M
+//SYSPRINT  DD SYSOUT=*
+//VWORKA4 DD VOL=SER=WORKA4,UNIT=SYSALLDA,DISP=SHR, <=== CHANGE ALL
+//   DSN=SYS1.VTOCIX.WORKA4        <=== OCCURRENCES OF VOLSER NAME.
+   BUILDIX DDNAME(VWORKA4) OSVTOC

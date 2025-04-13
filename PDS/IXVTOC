@@ -1,0 +1,17 @@
+//SBGOLOBX JOB (A006,SYTM,99,99),S-GOLOB,
+//        CLASS=B,MSGCLASS=X,NOTIFY=&SYSUID
+//*******************************************************************//
+//*    NOTE!!!!! THIS WILL ASK OPERS FOR 1 REPLY  ****************
+//*******************************************************************//
+//* ------------------------------------------- *//
+//* INVOKE THE DEVICE SUPPORT FACILITY PROGRAM
+//* ------------------------------------------- *//
+//****************************************//
+//*        REBUILD INDEXED VTOC:
+//****************************************//
+//START EXEC PGM=ICKDSF,TIME=1439,REGION=0M
+//SYSPRINT  DD SYSOUT=*
+//VWORKA4 DD VOL=SER=WORKA4,UNIT=SYSALLDA,DISP=SHR,
+//   DSN=SYS1.VTOCIX.WORKA4
+   BUILDIX DDNAME(VWORKA4) IXVTOC
+/*
